@@ -1,0 +1,17 @@
+kayttaja->selain:
+note left of selain
+käyttäjä on muistiinpanosivulla,
+kirjoittaa tekstikenttään muistiinpanon
+ja painaa Talleta
+end note
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note
+note left of palvelin
+  palvelin tallentaa kutsun mukana tulleen muistiinpanon
+end note
+palvelin->selain: status 302, uudelleenohjaus sivulle /notes
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+
+note left of selain
+  ks. aiempi sekvenssikaavio
+end note

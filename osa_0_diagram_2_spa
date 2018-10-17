@@ -1,0 +1,24 @@
+kayttaja->selain:
+note left of selain
+käyttäjä on muistiinpanosivulla /spa,
+kirjoittaa tekstikenttään muistiinpanon
+ja painaa Talleta
+end note
+
+selain->selain: redrawNotes()
+
+note left of selain
+  selain lisää uuden muistiinpanon DOM:iin
+end note
+
+selain->selain: sendToServer()
+
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note_spa
+note left of palvelin
+  palvelin tallentaa kutsun mukana tulleen muistiinpanon
+end note
+palvelin->selain: status 201, JSON-viesti
+
+note left of selain
+  selain tulostaa konsoliin vastausviestin
+end note
